@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.custom-bg-position {
+  background-position: center top -60px; /* Ajusta los -50px según sea necesario */
+}
+
+/* Tailwind classes */
+
+.children-full-height > * {
+  @apply h-full;
+}
+
+.children-links > * {
+  @apply uppercase text-white font-bold;
+}
+
+.children-text-2xl > * {
+  @apply text-2xl;
+}
+
+@layer utilities {
+  .bg-auto-custom {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center -50px;
+  }
+
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .grid-auto-fit-2 {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  }
+}
+
+.center-content {
+  @apply flex justify-center items-center flex-1;
+}
+
+.bg-image-hero {
+  background-image: url("header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.form-contact input,
+.form-contact textarea {
+  font-size: 14px;
+  padding: 14px;
+  border-radius: 5px;
+  background-color: #e8e7e7;
+}
+
+.form-contact input::placeholder,
+.form-contact textarea::placeholder {
+  color: #9f9f9f;
+  font-weight: bold;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+} */
+
+/* Swiper pagination carousel */
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -80px;
+}
+
+.swiper-pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
